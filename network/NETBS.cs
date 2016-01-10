@@ -63,7 +63,7 @@ public class NETBS : NetworkBehaviour
 	[SyncVar(hook="SyncDrop")]
 	GameObject
 		drop;
-	// Use this for initialization
+
 	void Start ()
 	{
 
