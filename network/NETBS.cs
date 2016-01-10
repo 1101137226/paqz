@@ -248,9 +248,7 @@ public class NETBS : NetworkBehaviour
 							combodamageup += 0.02f;
 						}
 					}
-					//damage33(a22);
-					//Instantiate(mm);
-					//CmdCreatmm();
+				
 
 					//	bbb.GetComponent<NETnewtempo>().die=true;
 				} else if (jk) {
