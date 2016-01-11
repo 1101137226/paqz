@@ -1,11 +1,10 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class MainSubSwich : MonoBehaviour {
 	public static bool who;
 	public Texture2D a;
 	public Texture2D b;
-	// Use this for initialization
 	void Start () {
 	
 	}
@@ -30,7 +29,6 @@ public class MainSubSwich : MonoBehaviour {
 
 
 		}
-	// Update is called once per frame
 	void Update () {
 	
 	}
