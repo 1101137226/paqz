@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class cardeffect : MonoBehaviour {
@@ -37,7 +37,6 @@ public class cardeffect : MonoBehaviour {
 	public static byte nowcard;
 
 
-	// Use this for initialization
 	void Start () {
 		ischiru=false;
 		isdairu=false;
@@ -50,7 +49,6 @@ public class cardeffect : MonoBehaviour {
 
 	}
 	
-	// Update is called once per frame
 	void Update () {
 	
 		if (System.Convert.ToInt32(nextcard) != nowcard) 
