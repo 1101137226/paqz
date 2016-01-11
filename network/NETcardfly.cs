@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class NETcardfly : MonoBehaviour {
@@ -7,12 +7,11 @@ public class NETcardfly : MonoBehaviour {
 	public byte who;
 	int thisx;
 	float timee=0f;
-	// Use this for initialization
+
 	void Start () {
 
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
 
 
@@ -49,11 +48,7 @@ public class NETcardfly : MonoBehaviour {
 				this.transform.localPosition = new Vector3 (thisx,3200, 0);
 				flydown=false;
 			}
-			
-
-			
-			
-			
+											
 		}
 
 	
