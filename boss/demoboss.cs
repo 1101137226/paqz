@@ -4,10 +4,10 @@ using System.Collections;
 public class demoboss : MonoBehaviour
 {
 	public float HP;
-	public static byte noise;
-	float maxdef = 700;
+	public static byte readonly noise;
+	float readonly maxdef = 700;
 	float def;
-	Queue defupup = new Queue ();
+	readonly Queue defupup = new Queue ();
 	public float defuptime;
 	float nowtime;
 	float rec = 4000;
