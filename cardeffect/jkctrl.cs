@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class jkctrl : MonoBehaviour
@@ -14,7 +14,6 @@ public class jkctrl : MonoBehaviour
 	bool inin;
 	bool inin2;
 	bool where;
-	// Use this for initialization
 	void Start ()
 	{
 		inin = true;
@@ -25,7 +24,6 @@ public class jkctrl : MonoBehaviour
 		inin2 = true;
 	}
 	
-	// Update is called once per frame
 	void Update ()
 	{
 		father = GameObject.Find ("UIRoot").transform;
