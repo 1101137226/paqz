@@ -53,10 +53,8 @@ public class boss80attack : MonoBehaviour
 		} else if (nowhp < 0.3f * maxhp && nowhp >= 0.1f * maxhp) {					
 			o = Random.Range (11, 13);			
 		} 
-		if (o == 2 || o == 3) {
-			if (demoboss.noise >= 3) {
-				o = 1;
-			}
+		if (o == 2 || o == 3 && demoboss.noise >= 3) {
+				o=1;
 		}
 		efftime = 0.0f;
 	}
@@ -65,6 +63,8 @@ public class boss80attack : MonoBehaviour
 	{
 		efftime += Time.deltaTime;
 		switch (o) {
+		default :
+		break;
 		case 0:
 			efftime = 0.0f;
 
@@ -89,11 +89,14 @@ public class boss80attack : MonoBehaviour
 			}
 			if (efftime < 0.25) {
 				GameObject.Find ("vmp(Clone)").GetComponent<SpriteRenderer> ().sprite = vmp;
-			} else if (efftime >= 0.25 && efftime < 0.5) {				
+			} 
+			if (efftime >= 0.25 && efftime < 0.5) {				
 				GameObject.Find ("vmp(Clone)").GetComponent<SpriteRenderer> ().sprite = vmp2;
-			} else if (efftime >= 0.5 && efftime < 0.75) {				
+			} 
+			if (efftime >= 0.5 && efftime < 0.75) {				
 				GameObject.Find ("vmp(Clone)").GetComponent<SpriteRenderer> ().sprite = vmp3;
-			} else if (efftime > 0.75) {				
+			} 
+			if (efftime > 0.75) {				
 				GameObject.Find ("vmp(Clone)").GetComponent<SpriteRenderer> ().sprite = vmp4;			
 			}
 
@@ -121,11 +124,13 @@ public class boss80attack : MonoBehaviour
 				GameObject.Find ("dead").GetComponent<AudioSource> ().Play ();
 				Instantiate (duoo);
 				duflag = 2;
-			} else if (efftime > 2 && duflag == 2) {
+			} 
+			if (efftime > 2 && duflag == 2) {
 				GameObject.Find ("dead").GetComponent<AudioSource> ().Play ();
 				Instantiate (duoo);
 				duflag = 3;
-			} else if (efftime > 3 && duflag == 3) {
+			} 
+			if (efftime > 3 && duflag == 3) {
 				GameObject.Find ("dead").GetComponent<AudioSource> ().Play ();
 				o = 0;
 				Instantiate (duoo);
@@ -284,16 +289,20 @@ public class boss80attack : MonoBehaviour
 				windflag++;
 				GameObject.Find ("ennoeff(Clone)").name = "wind";
 
-			} else if (efftime > 2f && windflag == 1) {
+			} 
+			if (efftime > 2f && windflag == 1) {
 				windflag++;
 				GameObject.Find ("ennoeff(Clone)").name = "wind";
-			} else if (efftime > 3f && windflag == 2) {
+			}
+			if (efftime > 3f && windflag == 2) {
 				windflag++;
 				GameObject.Find ("ennoeff(Clone)").name = "wind";
-			} else if (efftime > 4f && windflag == 3) {
+			} 
+			if (efftime > 4f && windflag == 3) {
 				windflag++;
 				GameObject.Find ("ennoeff(Clone)").name = "wind";
-			} else if (efftime > 5f) {
+			}
+			if (efftime > 5f) {
 				o = 0;
 			}
 
