@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class soul : MonoBehaviour {
@@ -8,7 +8,6 @@ public class soul : MonoBehaviour {
 	public static byte soulcombo;
 	public static byte soulcombok;
 	public static byte num;
-	// Use this for initialization
 	void Start () {
 	
 		cardeffect.nowcard = 0;
@@ -17,7 +16,6 @@ public class soul : MonoBehaviour {
 		bactrl.isspc = true;
 	}
 	
-	// Update is called once per frame
 	void Update () {
 	
 		passtime += Time.deltaTime;
