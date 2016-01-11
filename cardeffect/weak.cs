@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class weak : MonoBehaviour {
@@ -6,7 +6,6 @@ public class weak : MonoBehaviour {
 	public static short weakreduce=1;
 	bool jk;
 	bool inin;
-	// Use this for initialization
 	void Start () {
 	
 		cardeffect.nowcard = 0;
@@ -16,7 +15,6 @@ public class weak : MonoBehaviour {
 
 	}
 	
-	// Update is called once per frame
 	void Update () {
 
 		passtime += Time.deltaTime;
