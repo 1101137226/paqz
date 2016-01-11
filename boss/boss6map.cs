@@ -5,10 +5,10 @@ public class boss6map : MonoBehaviour
 {
 	public float HP;
 	float skilldelaytime;
-	public static byte noise;
-	float maxdef = 500;
+	public static byte readonly noise;
+	float readonly maxdef = 500;
 	float def;
-	Queue defupup = new Queue ();
+	readonly Queue defupup = new Queue ();
 	public float defuptime;
 	float rec = 400;
 	public float nowhp;
