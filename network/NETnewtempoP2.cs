@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using UnityEngine.Networking;
 public class NETnewtempoP2 : NetworkBehaviour {
@@ -33,7 +33,7 @@ public class NETnewtempoP2 : NetworkBehaviour {
 	[SyncVar(hook="Sdie1")]public bool die1=false;
 
 	[SyncVar(hook="SyncDead")]public bool Dead = false;
-	// Use this for initialization
+
 	void Start () {
 		inin = true;
 		todoke = false;
@@ -78,8 +78,6 @@ public class NETnewtempoP2 : NetworkBehaviour {
 	
 	}
 
-
-	// Update is called once per frame
 	void Update () {
 
 		nowPosition = 17000 - timer * speed*scriptupdown;
