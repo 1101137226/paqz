@@ -4,7 +4,7 @@ using System.Collections;
 public class StageSelect : MonoBehaviour
 {
 		
-		// Use this for initialization
+		
 		void Start ()
 		{
 			
@@ -45,18 +45,18 @@ public class StageSelect : MonoBehaviour
 														Application.LoadLevel ("map7-mura");
 														break;
 												case 8:
-														Application.LoadLevel ("demokai");
+														Application.LoadLevel ("map8-mura");
 														break;
 												case 9:
 														Application.LoadLevel ("map9-mura");
 														break;
 												case 10:
-														Application.LoadLevel ("map10-mura -");
+														Application.LoadLevel ("map10-mura");
 														break;
 												}
 										}
 								}
-								//Application.LoadLevel ("edit_new");
+								
 						}
 						if (this.name == "Next") {
 								for (int i = 0; i <= stage.Length-1; i++) {
@@ -111,7 +111,7 @@ public class StageSelect : MonoBehaviour
 				}
 		}
 	
-		// Update is called once per frame
+		
 		void Update ()
 		{
 		
