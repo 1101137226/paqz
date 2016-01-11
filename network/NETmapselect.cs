@@ -1,10 +1,9 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using UnityEngine.Networking;
 public class NETmapselect : NetworkBehaviour{
 	[SyncVar(hook="MAP")]public byte mapnum;
-
-	// Use this for initialization
+	
 	void Start () {
 		DontDestroyOnLoad (this.gameObject);
 		Random.seed = System.Guid.NewGuid().GetHashCode();
@@ -25,7 +24,7 @@ public class NETmapselect : NetworkBehaviour{
 		mapnum = num;
 	
 	}
-	// Update is called once per frame
+
 	void Update () {
 	
 	}
