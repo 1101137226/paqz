@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class dmgheal : MonoBehaviour {
@@ -13,12 +13,10 @@ public class dmgheal : MonoBehaviour {
 	float hp;
 	public static float dmg;
 
-	// Use this for initialization
 	void Start () {
 		dmg = 0;
 	}
 	
-	// Update is called once per frame
 	void Update () {
 
 		passtime += Time.deltaTime;
@@ -49,7 +47,7 @@ public class dmgheal : MonoBehaviour {
 			if(dmg>charstuas.maxhp*0.1f)
 			{
 				
-				charstuas.nowhp+=dmg;
+				charstuas.nowhp+=dmg*0.5f;
 				dmg=0;
 			}
 
@@ -62,7 +60,7 @@ public class dmgheal : MonoBehaviour {
 			if(dmg>charstuas.maxhp*0.1f)
 			{
 				
-				charstuas.nowhp+=dmg;
+				charstuas.nowhp+=dmg*0.25f;
 				dmg=0;
 			}
 
