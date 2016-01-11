@@ -1,9 +1,9 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class VSBack : MonoBehaviour {
 
-	// Use this for initialization
+
 	void Start () {
 	
 	}
@@ -18,7 +18,7 @@ public class VSBack : MonoBehaviour {
 		}
 	}
 	
-	// Update is called once per frame
+
 	void Update () {
 	
 	}
