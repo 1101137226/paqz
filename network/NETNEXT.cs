@@ -1,24 +1,28 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using UnityEngine.Networking;
-public class NETNEXT : NetworkBehaviour {
+
+public class NETNEXT : NetworkBehaviour
+{
 	public GameObject master;
 	public GameObject target;
-	 UIGrid grid;
-	 UIGrid grid2;
-	public bool con=false;
+	UIGrid grid;
+	UIGrid grid2;
+	public bool con = false;
 	int a;
 	int b;
 	public byte team;
 	public bool aa;
 	public bool bb;
 	bool inin;
-	[SyncVar(hook="SyncCC")]public bool cc;
-	// Use this for initialization
-	void Start () {
-		GameObject one=(GameObject)Instantiate(Resources.Load("NET/Main"));
-		GameObject two=(GameObject)Instantiate(Resources.Load("NET/Sub"));
-		GameObject three=(GameObject)Instantiate(Resources.Load("NET/Start"));
+	[SyncVar(hook="SyncCC")]
+	public bool cc;
+
+	void Start ()
+	{
+		GameObject one = (GameObject)Instantiate (Resources.Load ("NET/Main"));
+		GameObject two = (GameObject)Instantiate (Resources.Load ("NET/Sub"));
+		GameObject three = (GameObject)Instantiate (Resources.Load ("NET/Start"));
 		one.transform.parent = this.transform;
 		one.transform.localPosition = new Vector3 (62, 62, 0);
 		two.transform.parent = this.transform;
@@ -38,32 +42,30 @@ public class NETNEXT : NetworkBehaviour {
 		master = GameObject.Find (GameObject.Find ("UIRoot").GetComponent<NETSAVE> ().thisname).gameObject;
 		team = GameObject.Find ("UIRoot").GetComponent<NETSAVE> ().thisteam;
 
-		grid = GameObject.Find (this.name + "Main(Clone)/maindeck").GetComponent<UIGrid>();
-		grid2 = GameObject.Find (this.name + "Sub(Clone)/subdeck").GetComponent<UIGrid>();
+		grid = GameObject.Find (this.name + "Main(Clone)/maindeck").GetComponent<UIGrid> ();
+		grid2 = GameObject.Find (this.name + "Sub(Clone)/subdeck").GetComponent<UIGrid> ();
 		for (int i=0; i<30; i++) {
-			if(master.GetComponent<NETBS>().handd.Count==0)
-			{
+			if (master.GetComponent<NETBS> ().handd.Count == 0) {
 				break;
 			}
-			string aa=(string)master.GetComponent<NETBS>().handd.Dequeue();
+			string aa = (string)master.GetComponent<NETBS> ().handd.Dequeue ();
 		
-			GameObject to=(GameObject)Instantiate(Resources.Load("NETPIC/PIC_0"+aa));
-			to.transform.parent=grid.transform;
-			to.transform.localScale=new Vector3(1,1,1);
+			GameObject to = (GameObject)Instantiate (Resources.Load ("NETPIC/PIC_0" + aa));
+			to.transform.parent = grid.transform;
+			to.transform.localScale = new Vector3 (1, 1, 1);
 			to.GetComponent<UI2DSprite> ().depth = 50;
 
 		}
 
 		
 		for (int i=0; i<20; i++) {
-			if(master.GetComponent<NETBS>().Sub.Count==0)
-			{
+			if (master.GetComponent<NETBS> ().Sub.Count == 0) {
 				break;
 			}
-			string aa=(string)master.GetComponent<NETBS>().Sub.Dequeue();
-			GameObject to=(GameObject)Instantiate(Resources.Load("NETPIC/PIC_0"+aa));
-			to.transform.parent=grid2.transform;
-			to.transform.localScale=new Vector3(1,1,1);
+			string aa = (string)master.GetComponent<NETBS> ().Sub.Dequeue ();
+			GameObject to = (GameObject)Instantiate (Resources.Load ("NETPIC/PIC_0" + aa));
+			to.transform.parent = grid2.transform;
+			to.transform.localScale = new Vector3 (1, 1, 1);
 			to.GetComponent<UI2DSprite> ().depth = 50;
 		}
 
@@ -74,57 +76,48 @@ public class NETNEXT : NetworkBehaviour {
 
 
 		
-		GameObject[] p=GameObject.FindGameObjectsWithTag("Who");
+		GameObject[] p = GameObject.FindGameObjectsWithTag ("Who");
 		
 		if (p [0].name == master.name) {
-			target=p[1].gameObject;
+			target = p [1].gameObject;
 			
 			
 		} else if (p [1].name == master.name) {
 			
 			
-			target=p[0].gameObject;
+			target = p [0].gameObject;
 		}
 		GameObject Script = GameObject.Find ("Script").gameObject;
-		for (int c=0; c<12; c++) 
-		{
-			GameObject ScriptType=Script.transform.GetChild(c).gameObject;
+		for (int c=0; c<12; c++) {
+			GameObject ScriptType = Script.transform.GetChild (c).gameObject;
 			
-			if(ScriptType.transform.childCount!=0)
-			{
-				GameObject ScriptName =ScriptType.transform.GetChild(0).gameObject;
-				string ccc=ScriptName.name;
+			if (ScriptType.transform.childCount != 0) {
+				GameObject ScriptName = ScriptType.transform.GetChild (0).gameObject;
+				string ccc = ScriptName.name;
 				
-				if(ScriptType.name=="other")
-				{
-					int am	=ScriptType.transform.childCount;
-					for(int t=0;t<am;t++)
-					{
-						string ccb=ScriptType.transform.GetChild(t).name;
-						if(ccb=="dmgheal")
-						{
+				if (ScriptType.name == "other") {
+					int am = ScriptType.transform.childCount;
+					for (int t=0; t<am; t++) {
+						string ccb = ScriptType.transform.GetChild (t).name;
+						if (ccb == "dmgheal") {
 							
-							ScriptType.transform.GetChild(t).GetComponent<NETdmgheal>().passtime=100f;
+							ScriptType.transform.GetChild (t).GetComponent<NETdmgheal> ().passtime = 100f;
 							
-						}else if(ccb=="JK")
-						{
+						} else if (ccb == "JK") {
 							
-							ScriptType.transform.GetChild(t).GetComponent<NETJKctrl>().passtime=100f;
+							ScriptType.transform.GetChild (t).GetComponent<NETJKctrl> ().passtime = 100f;
 							
-						}else if(ccb=="GOPure")
-						{
+						} else if (ccb == "GOPure") {
 							
-							ScriptType.transform.GetChild(t).GetComponent<NETNOE>().passtime=100f;
+							ScriptType.transform.GetChild (t).GetComponent<NETNOE> ().passtime = 100f;
 							
-						}else if(ccb=="SPC")
-						{
+						} else if (ccb == "SPC") {
 							
-							ScriptType.transform.GetChild(t).GetComponent<NETSPC>().passtime=100f;
+							ScriptType.transform.GetChild (t).GetComponent<NETSPC> ().passtime = 100f;
 							
-						}else if(ccb=="VIS")
-						{
+						} else if (ccb == "VIS") {
 							
-							ScriptType.transform.GetChild(t).GetComponent<NETVIS>().passtime=100f;
+							ScriptType.transform.GetChild (t).GetComponent<NETVIS> ().passtime = 100f;
 							
 						}
 						
@@ -134,31 +127,25 @@ public class NETNEXT : NetworkBehaviour {
 					
 					
 					
-				}
-				else if(ccc=="accel")
-				{
+				} else if (ccc == "accel") {
 					
-					ScriptName.GetComponent<NETaccel>().passtime=100f;
+					ScriptName.GetComponent<NETaccel> ().passtime = 100f;
 					
-				}else if(ccc=="Boom")
-				{
+				} else if (ccc == "Boom") {
 					
-					Destroy(ScriptName.gameObject);
+					Destroy (ScriptName.gameObject);
 					
-				}else if(ccc=="change")
-				{
+				} else if (ccc == "change") {
 					
-					ScriptName.GetComponent<NETchange>().passtime=100f;
+					ScriptName.GetComponent<NETchange> ().passtime = 100f;
 					
-				}else if(ccc=="upup")
-				{
+				} else if (ccc == "upup") {
 					
-					ScriptName.GetComponent<NETdmgup>().passtime=100f;
+					ScriptName.GetComponent<NETdmgup> ().passtime = 100f;
 					
-				}else if(ccc=="DU")
-				{
+				} else if (ccc == "DU") {
 					
-					Destroy(ScriptName.gameObject);
+					Destroy (ScriptName.gameObject);
 					
 				}
 				
@@ -172,104 +159,96 @@ public class NETNEXT : NetworkBehaviour {
 
 		master.GetComponent<NETBS> ().Stop = true;
 		target.GetComponent<NETBS> ().Stop = true;
-		GameObject.Find("P1").GetComponent<net> ().Stop = true;
-		GameObject.Find("P2").GetComponent<net> ().Stop = true;
+		GameObject.Find ("P1").GetComponent<net> ().Stop = true;
+		GameObject.Find ("P2").GetComponent<net> ().Stop = true;
 	}
+
 	[Command]
-	void CmdCC()
+	void CmdCC ()
 	{
 		cc = true;
 
 	}
-	void SyncCC(bool s)
+
+	void SyncCC (bool s)
 	{
 
 		cc = s;
 	
 	}
-	// Update is called once per frame
-	void Update () {
 
-		 aa = master.GetComponent<NETstaus> ().ready;
-		 bb = target.GetComponent<NETstaus> ().ready;
+	void Update ()
+	{
+
+		aa = master.GetComponent<NETstaus> ().ready;
+		bb = target.GetComponent<NETstaus> ().ready;
 		if (aa && bb) {
 				
 		
-			cc=true;
+			cc = true;
 		
 		}
 
 		if (cc) {
-			if(inin)
-			{
-			Debug.Log("123");
-			GameObject aaa=GameObject.Find (this.name + "Main(Clone)/maindeck").gameObject;
-			GameObject bbb=GameObject.Find (this.name + "Sub(Clone)/subdeck").gameObject;
-			 a=aaa.transform.childCount;
-			 b=bbb.transform.childCount;
+			if (inin) {
+				GameObject aaa = GameObject.Find (this.name + "Main(Clone)/maindeck").gameObject;
+				GameObject bbb = GameObject.Find (this.name + "Sub(Clone)/subdeck").gameObject;
+				a = aaa.transform.childCount;
+				b = bbb.transform.childCount;
 
-			string [] deck=new string[30];
-			Debug.Log(a);
+				string [] deck = new string[30];
 
-			for (int i=0; i<a; i++) {
-				Debug.Log(i);
+				for (int i=0; i<a; i++) {
 
-				string abc =aaa.transform.GetChild (i).GetComponent<UI2DSprite> ().sprite2D.name;
-				deck[i]=abc;
+					string abc = aaa.transform.GetChild (i).GetComponent<UI2DSprite> ().sprite2D.name;
+					deck [i] = abc;
 				
 
 
-			}
-			for (int q=1; q<1000; q++) {
+				}
+				for (int q=1; q<1000; q++) {
 				
-				int o = Random.Range (0, a);
-				int p = Random.Range (0, a);
+					int o = Random.Range (0, a);
+					int p = Random.Range (0, a);
 				
-				string change = deck [o];
-				deck [o] = deck [p];
-				deck [p] = change;
+					string change = deck [o];
+					deck [o] = deck [p];
+					deck [p] = change;
 				
 				
 				
-			}
-			for (int i=a-1; i>=0; i--) {
+				}
+				for (int i=a-1; i>=0; i--) {
 
-				master.GetComponent<NETBS>().handd.Enqueue(deck[i]);
+					master.GetComponent<NETBS> ().handd.Enqueue (deck [i]);
 				
 				
 				
-			}
-			for (int i=b-1; i>=0; i--) {
-				
-				//	PlayerPrefs.SetInt ("001_amount", 3);
-				//Debug.Log (aaa.transform.GetChild (i).GetComponent<UI2DSprite> ().sprite2D.name);
-				string abc =bbb.transform.GetChild (i).GetComponent<UI2DSprite> ().sprite2D.name;
-				master.GetComponent<NETBS>().Sub.Enqueue(abc);
-				
-				
-				
-			}
-			master.GetComponent<NETBS>().deckleft=(short)master.GetComponent<NETBS>().handd.Count;
+				}
+				for (int i=b-1; i>=0; i--) {							
+					string abc = bbb.transform.GetChild (i).GetComponent<UI2DSprite> ().sprite2D.name;
+					master.GetComponent<NETBS> ().Sub.Enqueue (abc);										
+				}
+				master.GetComponent<NETBS> ().deckleft = (short)master.GetComponent<NETBS> ().handd.Count;
 			
-			master.GetComponent<NETstaus>().CmdSet();
-			master.GetComponent<NETBS> ().Stop = false;
+				master.GetComponent<NETstaus> ().CmdSet ();
+				master.GetComponent<NETBS> ().Stop = false;
 
-				master.GetComponent<NETstaus>().CmdReset();
+				master.GetComponent<NETstaus> ().CmdReset ();
 				
-				master.GetComponent<NETBS>().DrawFull();
+				master.GetComponent<NETBS> ().DrawFull ();
 
 			
 			
-				inin=false;
+				inin = false;
 			}
 
-			if(!aa && !bb)
-			{
-				GameObject.Find("P1").GetComponent<net> ().Stop = false;
-				GameObject.Find("P2").GetComponent<net> ().Stop = false;
+			if (!aa && !bb) {
+				GameObject.Find ("P1").GetComponent<net> ().Stop = false;
+				GameObject.Find ("P2").GetComponent<net> ().Stop = false;
 
-				Destroy(this.gameObject);
-				NetworkServer.Destroy(this.gameObject);
+				Destroy (this.gameObject);
+				NetworkServer.Destroy (this.gameObject);
 
 			}
 
