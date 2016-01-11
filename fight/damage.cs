@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class damage : MonoBehaviour {
@@ -24,7 +24,6 @@ public class damage : MonoBehaviour {
 	public static byte weakdamage=1;
 	public static byte powerboneup=0;
 	public static float combodamage=1.0f;
-	// Use this for initialization
 	void Start () {
 		 
 		
@@ -40,7 +39,6 @@ public class damage : MonoBehaviour {
 		combodamage=1.0f;
 	}
 	
-	// Update is called once per frame
 	void Update () {
 
 
@@ -50,7 +48,6 @@ public class damage : MonoBehaviour {
 		if (isgu) {
 			isgu=false;
 		
-			Debug.Log(charstuas.nowatk);
 
 			isdamage=charstuas.nowatk*0.8f*1.1f*damageupper*(damageuppergu+(float)powerboneup)*(float)weakdamage*combodamage*hitpois;
 			dmgheal.dmg=isdamage;
