@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class accel : MonoBehaviour {
@@ -10,7 +10,6 @@ public class accel : MonoBehaviour {
 	bool jk;
 	bool inin;
 
-	// Use this for initialization
 	void Start () {
 		inin = true;
 		nowcard = cardeffect.nowcard;
@@ -35,7 +34,6 @@ public class accel : MonoBehaviour {
 
 	}
 	
-	// Update is called once per frame
 	void Update () {
 	
 
