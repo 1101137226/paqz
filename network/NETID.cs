@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using UnityEngine.Networking;
 public class NETID : NetworkBehaviour {
@@ -7,7 +7,7 @@ public class NETID : NetworkBehaviour {
 
 	NetworkInstanceId NET_ID;
 	Transform me;
-	// Use this for initialization
+
 	public override void OnStartLocalPlayer()
 	{
 
@@ -19,8 +19,7 @@ public class NETID : NetworkBehaviour {
 	void Awake () {
 		me = transform;
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
 	if (me.name == "" || me.name == "NETCTRL(Clone)") {
 				
