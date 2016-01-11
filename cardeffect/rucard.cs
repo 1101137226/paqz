@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class rucard : MonoBehaviour {
@@ -8,13 +8,11 @@ public class rucard : MonoBehaviour {
 	byte targetcounter=0;
 	public byte num;
 	bool ininin;
-	// Use this for initialization
 	void Start () {
 		inin = true;
 		ininin = true;
 	}
 	
-	// Update is called once per frame
 	void Update () {
 		passtime += Time.deltaTime;
 		switch(num)
