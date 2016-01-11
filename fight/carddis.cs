@@ -1,16 +1,14 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 	
 public class carddis : MonoBehaviour {
 	public bool poi=false;
 	float poitime;
-	// Use this for initialization
 	void Start () {
 		poi = false;
 	
 	}
 	
-	// Update is called once per frame
 	void Update () {
 
 		if (poi) 
