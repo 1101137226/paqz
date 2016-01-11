@@ -1,10 +1,9 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class atkuper : MonoBehaviour {
 	public float atkupnowtime;
 	float nowatkup;
-	// Use this for initialization
 	void Start () {
 
 		nowatkup = charstuas.nowatk * 0.05f;
@@ -12,7 +11,6 @@ public class atkuper : MonoBehaviour {
 	
 	}
 	
-	// Update is called once per frame
 	void Update () {
 	
 
