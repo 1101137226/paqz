@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class bass : MonoBehaviour {
@@ -14,7 +14,6 @@ public class bass : MonoBehaviour {
 	float time2;
 	Transform father;
 	bool inin;
-	// Use this for initialization
 	void Start () {
 		cardeffect.nowcard = 0;
 		bactrl.isspc = true;
@@ -29,7 +28,6 @@ public class bass : MonoBehaviour {
 		inin = true;
 	}
 	
-	// Update is called once per frame
 	void Update () {
 		passtime += Time.deltaTime;
 
