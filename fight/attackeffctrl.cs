@@ -1,10 +1,9 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class attackeffctrl : MonoBehaviour {
 	public Sprite father;
 	float time;
-	// Use this for initialization
 	void Start () {
 
 		if (this.tag == "Player") {
@@ -23,7 +22,6 @@ public class attackeffctrl : MonoBehaviour {
 	
 	}
 	
-	// Update is called once per frame
 	void Update () {
 
 		time += Time.deltaTime;
