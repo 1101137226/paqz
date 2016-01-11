@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class pausehover : MonoBehaviour {
@@ -7,7 +7,7 @@ public class pausehover : MonoBehaviour {
 	public Texture2D resumeL;
 	public Texture2D backmain;
 	public Texture2D backmainL;
-	// Use this for initialization
+
 	void Start () {
 	
 	}
@@ -43,7 +43,7 @@ public class pausehover : MonoBehaviour {
 		}
 		
 	}
-	// Update is called once per frame
+
 	void Update () {
 	
 	}
