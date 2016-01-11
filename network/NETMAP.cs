@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class NETMAP : MonoBehaviour {
@@ -15,7 +15,7 @@ public class NETMAP : MonoBehaviour {
 	public Sprite king;
 
 	int o;
-	// Use this for initialization
+
 	void Start () {
 		GameObject m = GameObject.Find ("donotkillme").gameObject;
 
@@ -80,8 +80,7 @@ public class NETMAP : MonoBehaviour {
 		
 		}
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
 	
 	}
