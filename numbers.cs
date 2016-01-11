@@ -1,8 +1,8 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class numbers : MonoBehaviour {
-	//Texture2D [] texmube;
+
 	public Texture[] texmube;
 
 	 int number=4545;
@@ -16,12 +16,11 @@ public class numbers : MonoBehaviour {
 	public Texture2D seven;
 	public Texture2D eight;
 	public Texture2D nine;
-	// Use this for initialization
+
 	void Start () {
 	
 
-		//texmube = Resources.LoadAll("numbers");
-		//aa=(Texture2D)Resources.Load("numbers/0");
+
 		texmube= new Texture[10];
 
 
@@ -40,7 +39,7 @@ public class numbers : MonoBehaviour {
 
 	}
 	
-	// Update is called once per frame
+
 
 	void OnGUI()
 	{
@@ -59,7 +58,7 @@ public class numbers : MonoBehaviour {
 		foreach(char s in chars)
 		{
 			int i= int.Parse(s.ToString());
-			Debug.Log(i);
+
 			GUI.DrawTexture(new Rect(x,0,width,height),(Texture2D)texmube[i]);
 
 			x+=width;
