@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class deck : MonoBehaviour
@@ -9,16 +9,9 @@ public class deck : MonoBehaviour
 	public static bool draw = false;
 	Queue handd = new Queue ();
 	byte carddeck;
-	// Use this for initialization
 	void Start ()
 	{
-		/*
-		PlayerPrefs.SetInt ("001_amount", 3);
-		PlayerPrefs.SetInt ("002_amount", 3);
-		PlayerPrefs.SetInt ("003_amount", 3);
-		PlayerPrefs.SetInt ("004_amount", 3);
-		PlayerPrefs.SetInt ("005_amount", 3);
-		*/
+	
 
 		string [] deck = new string[30];
 		string j = "1";
@@ -72,8 +65,7 @@ public class deck : MonoBehaviour
 			GameObject.Find (handd.Peek () + "(Clone)").transform.parent = GameObject.Find ("UIRoot").transform;
 			GameObject.Find (handd.Peek () + "(Clone)").transform.localScale = new Vector3 (1, 1, 1);
 
-			//First 5 Card In Hand
-			//X Pos >> -6600(0), -4800(1), -3000(2), -1200(3), 600(4)
+
 			GameObject.Find (handd.Peek () + "(Clone)").transform.localPosition = new Vector3 (-6600 + q * 1800, -3300, 0);
 
 			GameObject.Find (handd.Dequeue () + "(Clone)").name = System.Convert.ToString (q);
@@ -82,7 +74,6 @@ public class deck : MonoBehaviour
 
 		}
 
-		//mSprite
 		carddeck = 25;
 	}
 
@@ -98,7 +89,7 @@ public class deck : MonoBehaviour
 				GameObject.Find (handd.Peek () + "(Clone)").transform.parent = GameObject.Find ("UIRoot").transform;
 				GameObject.Find (handd.Peek () + "(Clone)").transform.localScale = new Vector3 (1, 1, 1);
 
-				//The New Card By Draw, Their Y Pos Has To Control And Lower Than Default Y Pos Of Card
+			
 				GameObject.Find (handd.Peek () + "(Clone)").transform.localPosition = new Vector3 (-6600 + q * 1800, -4500, 0);
 
 				GameObject.Find (handd.Peek () + "(Clone)").GetComponent<cardfly> ().fly = true;
@@ -108,7 +99,6 @@ public class deck : MonoBehaviour
 			}
 		}
 	}
-	// Update is called once per frame
 	void Update ()
 	{
 		card.text = System.Convert.ToString (carddeck);
