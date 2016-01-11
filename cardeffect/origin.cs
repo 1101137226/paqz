@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class origin : MonoBehaviour {
@@ -6,7 +6,6 @@ public class origin : MonoBehaviour {
 	public static bool sonic=false;
 	bool inin;
 	public GameObject eff;
-	// Use this for initialization
 	void Start () {
 
 		cardeffect.nowcard = 0;
@@ -21,7 +20,6 @@ public class origin : MonoBehaviour {
 
 	}
 	
-	// Update is called once per frame
 	void Update () {
 	
 		passtime += Time.deltaTime;
