@@ -5,7 +5,7 @@ public class StageHover : MonoBehaviour
 {
 	public byte here;
 		
-	// Use this for initialization
+
 	void Start ()
 	{
 			
@@ -49,11 +49,11 @@ public class StageHover : MonoBehaviour
 				GameObject.Find ("Previous").GetComponent<UI2DSprite> ().sprite2D = previous_L;
 				break;
 			}
-			//GameObject.Find ("Stage").GetComponent<StageManager> ().where = here;
+
 		}
 	}
 
-	// Update is called once per frame
+
 	void Update ()
 	{
 			
