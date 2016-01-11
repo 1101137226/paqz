@@ -1,31 +1,31 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using UnityEngine.Networking;
-public class NETCardDis : NetworkBehaviour {
-	[SyncVar]public string who;
-	[SyncVar]public string master;
+
+public class NETCardDis : NetworkBehaviour
+{
+	[SyncVar]
+	public string who;
+	[SyncVar]
+	public string master;
 	float time;
-	// Use this for initialization
-	void Start () {
 
-		if(master!=GameObject.Find("UIRoot").GetComponent<NETSAVE>().thisname)
-		{GameObject.Find(who).GetComponent<carddis>().poi=true;}
+	void Start ()
+	{
 
-
-
-
-		//Destroy(this.gameObject);
-
+		if (master != GameObject.Find ("UIRoot").GetComponent<NETSAVE> ().thisname) {
+			GameObject.Find (who).GetComponent<carddis> ().poi = true;
+		}
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+	void Update ()
+	{
 	
 		time += Time.deltaTime;
 		if (time > 1.25f) {
 				
 		
-			Destroy(this.gameObject);
+			Destroy (this.gameObject);
 		
 		}
 
