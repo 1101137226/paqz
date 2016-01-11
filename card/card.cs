@@ -1,27 +1,21 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
-public class card : MonoBehaviour {
-		
-	// Use this for initialization
-	void Start () {
+public class card : MonoBehaviour
+{		
+	void Start ()
+	{
 	
 
 
 	}
+
+	void Update ()
+	{
 	
-	// Update is called once per frame
-	void Update () {
-	
-
-
-
 
 
 	}
-	
-
-
 }
 
 
