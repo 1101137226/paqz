@@ -3,9 +3,6 @@ using System.Collections;
 
 public class bactrl : MonoBehaviour
 {
-
-
-
 	public static bool[] ishand = new bool[5];
 	public Transform father;
 	public static bool ispace;
@@ -42,6 +39,7 @@ public class bactrl : MonoBehaviour
 		elowpoi = GameObject.Find ("elow(Clone)").transform;
 		effectctrl.father = lowpoi;
 		effectctrl.mother = elowpoi;
+		emhit.mother = elowpoi;
 		sonicflag = false;
 		GameObject.Find ("low(Clone)").transform.parent = father;
 		GameObject.Find ("low(Clone)").transform.localPosition = new Vector3 (-8000, -1200, 0);
@@ -71,8 +69,8 @@ public class bactrl : MonoBehaviour
 
 				changeflag = false;
 				jk = false;
-				Destroy (GameObject.Find ("high(Clone)").gameObject);
-				Instantiate (loww);
+				//Destroy (GameObject.Find ("high(Clone)").gameObject);
+				//Instantiate (loww);
 				lowpoi = GameObject.Find ("low(Clone)").transform;
 				effectctrl.father = lowpoi;
 				GameObject.Find ("low(Clone)").transform.parent = father;
@@ -82,12 +80,12 @@ public class bactrl : MonoBehaviour
 			} else if (Input.GetKeyDown (KeyCode.K) && changeflag == false) {
 				changeflag = true;
 				jk = true;
-				Destroy (GameObject.Find ("low(Clone)").gameObject);
-				Instantiate (highh);
-				highpoi = GameObject.Find ("high(Clone)").transform;
+				//Destroy (GameObject.Find ("low(Clone)").gameObject);
+				//Instantiate (highh);
+				highpoi = GameObject.Find ("low(Clone)").transform;
 				effectctrl.father = highpoi;
-				GameObject.Find ("high(Clone)").transform.parent = father;
-				GameObject.Find ("high(Clone)").transform.localPosition = new Vector3 (-4000, -1200, 0);
+				GameObject.Find ("low(Clone)").transform.parent = father;
+				GameObject.Find ("low(Clone)").transform.localPosition = new Vector3 (-4000, -1200, 0);
 				sonicflag = true;
 		
 			}
@@ -100,7 +98,7 @@ public class bactrl : MonoBehaviour
 					Destroy (GameObject.Find ("ehigh(Clone)").gameObject);
 					Instantiate (eloww);
 					elowpoi = GameObject.Find ("elow(Clone)").transform;
-					effectctrl.mother = elowpoi;
+					emhit.mother = elowpoi;
 					GameObject.Find ("elow(Clone)").transform.parent = father;
 					GameObject.Find ("elow(Clone)").transform.localPosition = new Vector3 (-8000, 900, 0);
 			
@@ -111,6 +109,7 @@ public class bactrl : MonoBehaviour
 					Instantiate (ehighh);
 					ehighpoi = GameObject.Find ("ehigh(Clone)").transform;
 					effectctrl.mother = ehighpoi;
+					emhit.mother = ehighpoi;
 					GameObject.Find ("ehigh(Clone)").transform.parent = father;
 					GameObject.Find ("ehigh(Clone)").transform.localPosition = new Vector3 (-4000, 900, 0);
 			
