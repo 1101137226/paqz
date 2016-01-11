@@ -1,11 +1,10 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class damageup : MonoBehaviour {
 	byte nowcard;
 	float effecttime;
 	public float passtime;
-	// Use this for initialization
 	void Start () {
 		cardeffect.isdairu = true;
 		damage.damageupper=1.0f;
@@ -21,7 +20,6 @@ public class damageup : MonoBehaviour {
 		Instantiate(Resources.Load("456789"));
 	}
 	
-	// Update is called once per frame
 	void Update () {
 	
 
