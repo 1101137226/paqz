@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class defup : MonoBehaviour {
@@ -6,13 +6,11 @@ public class defup : MonoBehaviour {
 
 
 	public float defupnowtime;
-	// Use this for initialization
 	void Start () {
 	
 		charstuas.nowdeff+=10;
 	}
 	
-	// Update is called once per frame
 	void Update () {
 	
 		defupnowtime += Time.deltaTime;
