@@ -8,11 +8,11 @@ public class map1enemy : MonoBehaviour
 	public  float atk = 150;
 	public  float maxdef = 20;
 	float def;
-	Queue defupup = new Queue ();
+        readonly	 Queue defupup = new Queue ();
 	public float defuptime;
-	float skill1 = 10f;
+         readonly float skill1 = 10f;
 	float nowtime;
-	int rec = 30;
+	readonly int rec = 30;
 	float nowhp;
 	bool skill2;
 
