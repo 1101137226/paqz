@@ -4,10 +4,10 @@ using System.Collections;
 public class map2muraboss : MonoBehaviour
 {
 	public float HP;
-	public static byte noise;
-	float maxdef = 200;
+	public static byte readonly noise;
+	float readonly maxdef = 200;
 	float def;
-	Queue defupup = new Queue ();
+	readonly Queue defupup = new Queue ();
 	public float defuptime;
 	float rec = 200;
 	public float nowhp;
