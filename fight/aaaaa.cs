@@ -1,8 +1,8 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
-
  
-public class aaaaa : MonoBehaviour {
+public class aaaaa : MonoBehaviour
+{
 	
 	public static short combo;
 	float limittime;
@@ -20,8 +20,8 @@ public class aaaaa : MonoBehaviour {
 	public static bool suckblood;
 	float time;
 	bool nametime;
-	// Use this for initialization
-	void Start () {
+	void Start ()
+	{
 		hit2 = false;
 		nametime = true;
 		dicombo = 0;
@@ -35,247 +35,164 @@ public class aaaaa : MonoBehaviour {
 		iskbasson = false;
 		hit2 = false;
 		nam1 = GameObject.Find ("ground3").GetComponent<SpriteRenderer> ().sprite.name;
-
 	}
 
-	public void damage33(string a22)
+	public void damage33 (string a22)
 	{
-
-		GameObject.Find("hitSE").GetComponent<AudioSource>().Play();
+		GameObject.Find ("hitSE").GetComponent<AudioSource> ().Play ();
 		if (a22 == "gu") {
-         damage.isgu = true;
-			if(nam1=="暗色圖"){
-			if(emenyhit.encombo<10){
-			
-				recdown=true;
-			}
-			}
-	
+			damage.isgu = true;
+			if (nam1 == "暗色圖") {
+				if (emenyhit.encombo < 10) {			
+					recdown = true;
+				}
+			}	
 		} else if (a22 == "ciang") {
-						damage.isbass = true;
-			if(nam1 == "暗色圖")
-			{
-				if(combo>15)
-				{
+			damage.isbass = true;
+			if (nam1 == "暗色圖") {
+				if (combo > 15) {
 					ciangcombo++;
-					if(ciangcombo==10)
-					{
+					if (ciangcombo == 10) {
 						nametime = false;
-						newtempoeneny.meslowdown=0.5f;
-						ciangcombo=0;
-					}
-				
-				
-				}
-
-			}
-
-				} else if (a22 == "piano") {
-						damage.ispiano = true;
-
-				} else if (a22 == "di") {
-						damage.issmall = true;
-					if(nam1=="暗色圖"){
-				suckblood=true;
-			}
-
-				} else if (a22 == "ff") {
-
-						damage.issonic = true;
-				} else if (a22 == "duo") {
-						charstuas.nowhp = charstuas.nowhp - charstuas.maxhp * 0.05f;
-				}
-		
-	}
-	public void damage22(string a22)
-	{
-		GameObject.Find("hitSE").GetComponent<AudioSource>().Play();
-		if (a22 == "gu") {
-			if(nam1=="暗色圖"){
-				if(emenyhit.encombo<10){
-					
-					recdown=true;
+						newtempoeneny.meslowdown = 0.5f;
+						ciangcombo = 0;
+					}							
 				}
 			}
-			Instantiate(atkup);
-			
-		} else if (a22 == "ciang") {
-			iskbasson=true;
-			
 		} else if (a22 == "piano") {
-			damage.iskpiano=true;
-			
+			damage.ispiano = true;
 		} else if (a22 == "di") {
-			damage.isksmall=true;
-			if(nam1=="暗色圖"){
-				suckblood=true;
+			damage.issmall = true;
+			if (nam1 == "暗色圖") {
+				suckblood = true;
 			}
-			
 		} else if (a22 == "ff") {
-			Instantiate(atkup);
-			iskbasson=true;
-			damage.iskpiano=true;
-			damage.isksmall=true;
+			damage.issonic = true;
 		} else if (a22 == "duo") {
+			charstuas.nowhp = charstuas.nowhp - charstuas.maxhp * 0.05f;
+		}		
+	}
 
-		}
-	
-	
-	
+	public void damage22 (string a22)
+	{
+		GameObject.Find ("hitSE").GetComponent<AudioSource> ().Play ();
+		if (a22 == "gu") {
+			if (nam1 == "暗色圖") {
+				if (emenyhit.encombo < 10) {					
+					recdown = true;
+				}
+			}
+			Instantiate (atkup);			
+		} else if (a22 == "ciang") {
+			iskbasson = true;			
+		} else if (a22 == "piano") {
+			damage.iskpiano = true;			
+		} else if (a22 == "di") {
+			damage.isksmall = true;
+			if (nam1 == "暗色圖") {
+				suckblood = true;
+			}			
+		} else if (a22 == "ff") {
+			Instantiate (atkup);
+			iskbasson = true;
+			damage.iskpiano = true;
+			damage.isksmall = true;
+		} else if (a22 == "duo") {
+		}	
 	}
   
-	void OnTriggerStay2D(Collider2D bbb)
+	void OnTriggerStay2D (Collider2D bbb)
 	{
 		if (bbb.gameObject.tag == "duo") {
-
-			if(Input.GetKey(KeyCode.J) && down){
-				down=false;
-				if(this.tag=="late")
-				{
-				Instantiate(skull);
-				string a22=bbb.GetComponent<UITexture>().mainTexture.name;
-				damage33(a22);
+			if (Input.GetKey (KeyCode.J) && down) {
+				down = false;
+				if (this.tag == "late") {
+					Instantiate (skull);
+					string a22 = bbb.GetComponent<UITexture> ().mainTexture.name;
+					damage33 (a22);
 					Destroy (bbb.gameObject);
-				}else if(this.tag=="early")
-			{
-
-
-					Instantiate(mm);
+				} else if (this.tag == "early") {
+					Instantiate (mm);
 					Destroy (bbb.gameObject);
-
-
+				}								
+				down = true;					
 			}
-
-					
-					down=true;
-					
-
-
-			}
-		}
-		else if (bbb.gameObject.tag == "early") {
-
-
-			if(Input.GetKey(KeyCode.J) && down){
-
-				down=false;
-				if(this.tag=="late"){
+		} else if (bbb.gameObject.tag == "early") {
+			if (Input.GetKey (KeyCode.J) && down) {
+				down = false;
+				if (this.tag == "late") {				
+					string a22 = bbb.GetComponent<UITexture> ().mainTexture.name;
+					bbb.GetComponent<hittwice> ().hitcount++;
 				
-
-				string a22=bbb.GetComponent<UITexture>().mainTexture.name;
-					bbb.GetComponent<hittwice>().hitcount++;
-				
-					if(this.name=="low(Clone)")
-					{
-						damage.hitpois=1.0f;
-
-
-					}else if(this.name=="front")
-					{
-
-						damage.hitpois=0.7f;
-
-					}else if(this.name=="real")
-					{
-						damage.hitpois=0.8f;
-
+					if (this.name == "low(Clone)") {
+						damage.hitpois = 1.0f;
+					} else if (this.name == "front") {
+						damage.hitpois = 0.7f;
+					} else if (this.name == "real") {
+						damage.hitpois = 0.8f;
 					}
-				damage33(a22);
-						Instantiate(mm);
-						combo++;drawcombo++;soul.soulcombok++;bass.basscombo++;
-						if(combo>=3)
-						{
-							damage.combodamage+=0.02f;
-						}
+					damage33 (a22);
+					Instantiate (mm);
+					combo++;
+					drawcombo++;
+					soul.soulcombok++;
+					bass.basscombo++;
+					if (combo >= 3) {
+						damage.combodamage += 0.02f;
+					}
 
-						Destroy (bbb.gameObject);
+					Destroy (bbb.gameObject);
 
+				} else if (this.tag == "early") {
+					Instantiate (mm);
 
-				}else if(this.tag=="early")
-				{
-					Instantiate(mm);
-
-					string a22=bbb.GetComponent<UITexture>().mainTexture.name;
-					bbb.GetComponent<hittwice>().hitcount++;
-					if(this.name=="high(Clone)")
-					{
-						damage.hitpois=1.0f;
-						
-						
-					}else if(this.name=="front")
-					{
-						
-						damage.hitpois=0.7f;
-						
-					}else if(this.name=="real")
-					{
-						damage.hitpois=0.8f;
-						
+					string a22 = bbb.GetComponent<UITexture> ().mainTexture.name;
+					bbb.GetComponent<hittwice> ().hitcount++;
+					if (this.name == "high(Clone)") {
+						damage.hitpois = 1.0f;											
+					} else if (this.name == "front") {						
+						damage.hitpois = 0.7f;						
+					} else if (this.name == "real") {
+						damage.hitpois = 0.8f;						
 					}
 						
-						damage22(a22);
-						combo++;drawcombo++;soul.soulcombo++;bass.basscombok++;
-						if(combo>=3)
-						{
-							damage.combodamage+=0.02f;
-						}
-						Instantiate(mm);
-						Destroy (bbb.gameObject);}
-
-
-					
-
+					damage22 (a22);
+					combo++;
+					drawcombo++;
+					soul.soulcombo++;
+					bass.basscombok++;
+					if (combo >= 3) {
+						damage.combodamage += 0.02f;
+					}
+					Instantiate (mm);
+					Destroy (bbb.gameObject);
+				}											
 			}
-
-
-
-
-			}
-
-
-
-
-	
-		}
-		
-
-	// Update is called once per frame
-	void Update () {
-
-		if (nametime == false) {
-			limittime+=Time.deltaTime;
-			if(limittime>3f){
-				newtempoeneny.meslowdown=1f;
-				limittime=0;
-				nametime=true;
-			}
-		}
-
-		GameObject.Find ("combo").GetComponent<UILabel>().text = System.Convert.ToString(combo);
-
-		if (Input.GetKey (KeyCode.J)) {
-				
-			time+=Time.deltaTime;
-
-				if(time>0.1f)
-			{
-
-				down=false;
-
-			}
-		
-		}
-		if(Input.GetKeyUp(KeyCode.J))
-		{
-			time=0f;
-			down=true;
-		}
-
-
-		
-		
-		
+		}	
 	}
+		
+	void Update ()
+	{
+		if (nametime == false) {
+			limittime += Time.deltaTime;
+			if (limittime > 3f) {
+				newtempoeneny.meslowdown = 1f;
+				limittime = 0;
+				nametime = true;
+			}
+		}
 
-	
+		GameObject.Find ("combo").GetComponent<UILabel> ().text = System.Convert.ToString (combo);
+
+		if (Input.GetKey (KeyCode.J)) {				
+			time += Time.deltaTime;
+			if (time > 0.1f) {
+				down = false;
+			}		
+		}
+		if (Input.GetKeyUp (KeyCode.J)) {
+			time = 0f;
+			down = true;
+		}						
+	}	
 }
