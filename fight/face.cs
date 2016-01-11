@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class face : MonoBehaviour {
@@ -10,12 +10,10 @@ public class face : MonoBehaviour {
 	public bool hitt;
 	public bool diee;
 	float time;
-	// Use this for initialization
 	void Start () {
 	
 	}
 	
-	// Update is called once per frame
 	void Update () {
 	
 		if (winn) {
