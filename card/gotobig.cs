@@ -1,9 +1,8 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class gotobig : MonoBehaviour {
 
-	//	Debug.Log(GameObject.Find("5").GetComponent<UI2DSprite>().sprite2D.name);
 	bool flag=true;
 
 
@@ -15,7 +14,6 @@ public class gotobig : MonoBehaviour {
 			if(flag)
 			{
 				string nowname=GameObject.Find(this.transform.name).GetComponent<UI2DSprite>().sprite2D.name;
-				//Debug.Log(nowname);
 				cardidd=nowname;
 				Vector3 pppp =new Vector3(100000,1000000,-2);
 				Instantiate(Resources.Load("BIG/bigSEA_"+nowname),pppp,Quaternion.identity);flag=false;
