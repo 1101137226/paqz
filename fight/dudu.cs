@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class dudu : MonoBehaviour {
@@ -12,7 +12,6 @@ public class dudu : MonoBehaviour {
 	short givepos;
 	public float givedelay;
 	public static int duospeed;
-	// Use this for initialization
 	void Start () {
 	
 		duospeed = 6000;
@@ -22,7 +21,6 @@ public class dudu : MonoBehaviour {
 		this.transform.localPosition = new Vector3 (17000,0, -100);
 	}
 	
-	// Update is called once per frame
 	void Update () {
 	
 		now = 17000 - timer * duospeed;
