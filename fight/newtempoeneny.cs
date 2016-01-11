@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class newtempoeneny : MonoBehaviour {
@@ -29,16 +29,13 @@ public class newtempoeneny : MonoBehaviour {
 	public	bool isdu;
 	public static bool isvis;
 
-	// Use this for initialization
 	void Start () {
 
 		enemyspeed = 8000;
 		father = GameObject.Find ("en").transform;
 		gave =GameObject.Find("me").transform;
-		//	pe= GameObject.Find("tpfr").transform;
 		this.transform.parent=father;
-		//	this.transform.localPosition = new Vector3 (-6756,3800, -100);
-		
+
 		this.transform.localPosition = new Vector3 (17000,0, -100);
 		
 
@@ -48,8 +45,7 @@ public class newtempoeneny : MonoBehaviour {
 	}
 	
 	
-	// Update is called once per frame
-	
+
 	void Update () {
 		
 
