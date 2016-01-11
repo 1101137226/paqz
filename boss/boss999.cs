@@ -5,10 +5,10 @@ public class boss999 : MonoBehaviour {
 	public float HP;
 	bool skillwalk;
 	float skilldelaytime;
-	public static byte noise;
-	float maxdef=900;
+	public static byte readonly noise;
+	float readonly maxdef=900;
 	float def;
-	Queue defupup =new Queue();
+	readonly Queue defupup =new Queue();
 	public float defuptime;
 	float rec=2000;
 	public float nowhp;
