@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class scriptchange : MonoBehaviour {
@@ -14,7 +14,6 @@ public class scriptchange : MonoBehaviour {
 	int nowcard;
 	 float effecttime;
 	public float passtime;
-	// Use this for initialization
 	void Start () {
 		cardeffect.ischiru = true;
 		nowcard = cardeffect.nowcard;
@@ -28,7 +27,6 @@ public class scriptchange : MonoBehaviour {
 		colorch = GameObject.Find ("trdown").gameObject;
 	}
 	
-	// Update is called once per frame
 	void Update () {
 
 						if (cardeffect.nowcard <= 24 && cardeffect.nowcard != nowcard && cardeffect.nowcard!=0) {
