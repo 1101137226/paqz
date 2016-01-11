@@ -1,18 +1,16 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class vis : MonoBehaviour {
 	byte nowcard;
 	float effecttime;
 	public float passtime;
-	// Use this for initialization
 	void Start () {
 		cardeffect.isviiru = true;
 		nowcard = cardeffect.nowcard;
 		cardeffect.nowcard = 0;
 	}
 	
-	// Update is called once per frame
 	void Update () {
 	
 		if (cardeffect.nowcard>53 && cardeffect.nowcard <= 56 && cardeffect.nowcard != nowcard && cardeffect.nowcard!=0) {
