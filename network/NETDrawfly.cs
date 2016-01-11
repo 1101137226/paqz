@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using UnityEngine.Networking;
 public class NETDrawfly : NetworkBehaviour {
@@ -9,16 +9,11 @@ public class NETDrawfly : NetworkBehaviour {
 	[SyncVar]public string master;
 	[SyncVar]public byte team;
 	float time;
-	// Use this for initialization
+
 	void Start () {
 	
 		if (this.name == "Draw(Clone)") {
 				
-
-
-
-		
-		
 			if(master!=GameObject.Find("UIRoot").GetComponent<NETSAVE>().thisname)
 			{
 
@@ -51,19 +46,14 @@ public class NETDrawfly : NetworkBehaviour {
 
 			
 			}
-		
-		
-		
-		
-
+				
 	
 		
 		}
 
 
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
 	
 
