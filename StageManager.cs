@@ -3,7 +3,7 @@ using System.Collections;
 
 public class StageManager : MonoBehaviour
 {
-	public Texture2D[] stage = new Texture2D[0]; //Stage Picture
+	public Texture2D[] stage = new Texture2D[0];
 	public Sprite play;
 	public Sprite play_L;
 	public Sprite next;
@@ -14,7 +14,7 @@ public class StageManager : MonoBehaviour
 	public Sprite previous_L;
 	public byte where;
 		
-	// Use this for initialization
+
 	void Start ()
 	{
 		GameObject selected = GameObject.Find ("Selected Stage");
@@ -26,7 +26,7 @@ public class StageManager : MonoBehaviour
 		where = 0;
 	}
 	
-	// Update is called once per frame
+
 	void Update ()
 	{
 		switch (where) {
