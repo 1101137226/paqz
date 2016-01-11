@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using UnityEngine.Networking;
 public class net : NetworkBehaviour{
@@ -10,7 +10,6 @@ public class net : NetworkBehaviour{
 	public bool isdu;
 
 	[SyncVar(hook="SyncStop")]public bool Stop=false;
-	// Use this for initialization
 
 	void Awake()
 	{
@@ -39,7 +38,7 @@ public class net : NetworkBehaviour{
 		Stop = b;
 	
 	}
-	// Update is called once per frame
+
 	void Update () {
 
 		if (Stop)
@@ -90,11 +89,7 @@ public class net : NetworkBehaviour{
 	{	
 
 		if (this.tag == "P1Base") {
-						GameObject too = (GameObject)Instantiate (to);
-
-
-						
-
+						GameObject too = (GameObject)Instantiate (to);											
 						NetworkServer.Spawn (too);
 
 				} else if (this.tag == "P2Base"){
