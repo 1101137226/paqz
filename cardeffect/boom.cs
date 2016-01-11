@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class boom : MonoBehaviour {
@@ -9,7 +9,6 @@ public class boom : MonoBehaviour {
 	short maxcombo;
 	bool inin=false;
 	public byte num;
-	// Use this for initialization
 	void Start () {
 
 
@@ -29,7 +28,6 @@ public class boom : MonoBehaviour {
 		inin = true;
 	}
 	
-	// Update is called once per frame
 	void Update () {
 		passtime += Time.deltaTime;
 
