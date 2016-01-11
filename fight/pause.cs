@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class pause : MonoBehaviour {
@@ -13,14 +13,12 @@ public class pause : MonoBehaviour {
 	bool inin;
 	public bool flag;
 
-	// Use this for initialization
 	void Start () {
 
 		now = true;
 		flag = false;
 	}
 	
-	// Update is called once per frame
 	void Update () {
 	
 
@@ -30,7 +28,6 @@ public class pause : MonoBehaviour {
 			Time.timeScale=0;
 			aaa=GameObject.Find("Camera").GetComponent<AudioSource>().time;
 			GameObject.Find("Camera").GetComponent<AudioSource>().Pause();
-			Debug.Log(aaa);
 			stop=true;
 
 			Instantiate(Resources.Load("stopback"));
