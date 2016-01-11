@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class gotoright : MonoBehaviour {
@@ -21,7 +21,6 @@ public class gotoright : MonoBehaviour {
 
 						
 		for (int i=a-1; i>=0; i--) {
-				Debug.Log(i);
 			string abc =M.transform.GetChild (i).GetComponent<UI2DSprite> ().sprite2D.name;
 			if(abc==this.GetComponent<UI2DSprite>().sprite2D.name)
 			{aa++;}
@@ -66,8 +65,7 @@ public class gotoright : MonoBehaviour {
 										GameObject.Find (System.Convert.ToString (DECKDISPLAY.poi + "poi")).transform.localScale = new Vector3 (1, 1, 1);
 			
 										aaa.repositionNow = true;
-										//  Get sprite name from 
-										//	Debug.Log(GameObject.Find("5").GetComponent<UI2DSprite>().sprite2D.name);
+									
 			
 
 
