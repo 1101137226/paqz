@@ -1,11 +1,10 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class noeffect : MonoBehaviour {
 	int nowcard;
 	float effecttime;
 	public float passtime;
-	// Use this for initialization
 	void Start () {
 		cardeffect.isnoiru = true;
 		nowcard = cardeffect.nowcard;
@@ -22,7 +21,6 @@ public class noeffect : MonoBehaviour {
 		}
 	}
 	
-	// Update is called once per frame
 	void Update () {
 	
 
