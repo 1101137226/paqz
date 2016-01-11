@@ -4,10 +4,10 @@ using System.Collections;
 public class no2map : MonoBehaviour
 {
 	public float HP;
-	public static byte noise;
-	float maxdef = 300;
+	public static byte readonly noise;
+	float readonly maxdef = 300;
 	float def;
-	Queue defupup = new Queue ();
+	readonly Queue defupup = new Queue ();
 	public float defuptime;
 	float rec = 800;
 	public float nowhp;
