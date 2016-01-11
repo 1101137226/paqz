@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class newtempo : MonoBehaviour {
@@ -25,16 +25,13 @@ public class newtempo : MonoBehaviour {
 	public bool isdu;
 	public static bool isvis;
 
-	// Use this for initialization
 	void Start () {
 		gogo = false;
 		howmanyhit=0;
 		speed = 8000;
 		father = GameObject.Find ("me").transform;
 		todoketran=GameObject.Find("en").transform;
-	//	pe= GameObject.Find("tpfr").transform;
 		this.transform.parent=father;
-	//	this.transform.localPosition = new Vector3 (-6756,3800, -100);
 
 		this.transform.localPosition = new Vector3 (17000,0, -100);
 
@@ -50,7 +47,6 @@ public class newtempo : MonoBehaviour {
 	}
 
 
-	// Update is called once per frame
 
         void Update () {
 
