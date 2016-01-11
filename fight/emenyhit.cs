@@ -30,7 +30,6 @@ public class emenyhit : MonoBehaviour {
 	public static bool turn;
 	public static float turnsec;
 	float turntime;
-	// Use this for initialization
 	void Start () {
 		inin = true;
 		hitposi=1f;
@@ -63,7 +62,6 @@ public class emenyhit : MonoBehaviour {
 			
 						}
 				} else if (turn) {
-			Debug.Log("444");	
 			if (a22 == "gu") {
 				
 				damage.isdamage = enemyatk * 0.8f * 1.3f * enemydamageup * weakatkup * encombodamage * hitposi;
@@ -166,7 +164,7 @@ public class emenyhit : MonoBehaviour {
 				{encombodamage+=0.02f;}
 					inin=true;
 					GameObject go=(GameObject)Instantiate(midhit);
-					go.GetComponent<effectctrl>().who=true;
+					go.GetComponent<emhit>().who=true;
 
 				Destroy (bbb.gameObject);
 				}
@@ -183,7 +181,7 @@ public class emenyhit : MonoBehaviour {
 					damage22(a22);
 						inin=true;
 						GameObject go=(GameObject)Instantiate(midhit);
-						go.GetComponent<effectctrl>().who=true;
+						go.GetComponent<emhit>().who=true;
 						Destroy (bbb.gameObject);
 					}
 				
@@ -197,7 +195,7 @@ public class emenyhit : MonoBehaviour {
 						damage11(a22);
 						inin=true;
 						GameObject go=(GameObject)Instantiate(midhit);
-						go.GetComponent<effectctrl>().who=true;
+						go.GetComponent<emhit>().who=true;
 						Destroy (bbb.gameObject);
 					}
 				
@@ -223,7 +221,7 @@ public class emenyhit : MonoBehaviour {
 				{encombodamage+=0.02f;}
 					inin=true;
 					GameObject go=(GameObject)Instantiate(midhit);
-					go.GetComponent<effectctrl>().who=true;
+					go.GetComponent<emhit>().who=true;
 				Destroy (bbb.gameObject);
 
 				}
@@ -241,7 +239,6 @@ public class emenyhit : MonoBehaviour {
 			
 		}
 	}
-	// Update is called once per frame
 	void Update () {
 		if (turn) {
 				
