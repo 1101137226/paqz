@@ -1,9 +1,9 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class demouse : MonoBehaviour {
 	public bool onon = false;
-	// Use this for initialization
+
 	void Start () {
 	
 
@@ -28,7 +28,7 @@ public class demouse : MonoBehaviour {
 		PlayerPrefs.SetInt("80_amount",1);
 	}
 	
-	// Update is called once per frame
+
 	void Update () {
 	
 	}
