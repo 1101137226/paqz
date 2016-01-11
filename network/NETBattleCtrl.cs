@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using UnityEngine.Networking;
 public class NETBattleCtrl : NetworkBehaviour {
@@ -15,15 +15,10 @@ public class NETBattleCtrl : NetworkBehaviour {
 
 	void Awake()
 	{
-		
-
-
-		
+					
 	}
-	// Use this for initialization
+
 	void Start () {
-
-
 		if (!isLocalPlayer) 
 			return;
 		father = GameObject.Find ("UIRoot").transform;
@@ -41,22 +36,13 @@ public class NETBattleCtrl : NetworkBehaviour {
 			kpos=new Vector3 (-5184, 913, 0);
 			this.transform.parent = father;
 			this.transform.localPosition = jpos;
-			this.transform.localScale = new Vector3 (800, 800, 800);
-			
+			this.transform.localScale = new Vector3 (800, 800, 800);			
 		}
-		
-
 	}
-
 	
-	// Update is called once per frame
 	void Update () {
-
-	
-
 		if (!isLocalPlayer)
 			return;
-
 
 		if(Input.GetKeyDown (KeyCode.K) && changeflag == true)
 		{
@@ -68,14 +54,8 @@ public class NETBattleCtrl : NetworkBehaviour {
 		{
 			this.transform.localPosition=jpos;
 		
-			changeflag=true;
-			
+			changeflag=true;		
 		}
-
-
-
-
-
 	}
 
 
