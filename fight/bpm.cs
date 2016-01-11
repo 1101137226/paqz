@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 //
 public class bpm : MonoBehaviour {
@@ -16,7 +16,6 @@ public class bpm : MonoBehaviour {
 	public GameObject num;
 	bool inin;
 	bool countdown;
-	// Use this for initialization
 	void Start () {
 		if (!test) {
 						inin = false;
@@ -30,7 +29,6 @@ public class bpm : MonoBehaviour {
 
 	}
 
-	// Update is called once per frame
 
 
 	public void DUCreat()
