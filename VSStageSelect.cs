@@ -5,7 +5,7 @@ public class VSStageSelect : MonoBehaviour
 {
 
 	public bool ismove=false;
-		// Use this for initialization
+		
 		void Start ()
 		{
 
@@ -91,7 +91,7 @@ public class VSStageSelect : MonoBehaviour
 				}
 		}
 	
-		// Update is called once per frame
+		
 		void Update ()
 		{
 		
