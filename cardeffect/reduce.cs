@@ -1,11 +1,10 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class reduce : MonoBehaviour {
 	byte nowcard;
 	float effecttime;
 	public float passtime;
-	// Use this for initialization
 	void Start () {
 		charstuas.reducing=1;
 		cardeffect.isreiru = true;
@@ -13,7 +12,6 @@ public class reduce : MonoBehaviour {
 		cardeffect.nowcard = 0;
 	}
 	
-	// Update is called once per frame
 	void Update () {
 	
 		if (cardeffect.nowcard>47 && cardeffect.nowcard <= 50 && cardeffect.nowcard != nowcard && cardeffect.nowcard!=0) {
