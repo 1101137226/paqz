@@ -1,11 +1,11 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class NETGOUPDOWN : MonoBehaviour {
 
 	GameObject up;
 	GameObject down;
-	// Use this for initialization
+
 	void Start () {
 		up = GameObject.Find ("maindeck").gameObject;
 		down = GameObject.Find ("subdeck").gameObject;
