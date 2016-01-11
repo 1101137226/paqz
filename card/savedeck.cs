@@ -1,10 +1,9 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class savedeck : MonoBehaviour {
 
-	//PlayerPrefs.SetInt ("1_Get", 1);
-	//"00" + j + "_amount"
+
 	public GameObject aaa;
 	public GameObject bbb;
 	byte flag;
@@ -33,8 +32,6 @@ public class savedeck : MonoBehaviour {
 
 						for (int i=a-1; i>=0; i--) {
 
-				//	PlayerPrefs.SetInt ("001_amount", 3);
-								//Debug.Log (aaa.transform.GetChild (i).GetComponent<UI2DSprite> ().sprite2D.name);
 								string abc =aaa.transform.GetChild (i).GetComponent<UI2DSprite> ().sprite2D.name;
 								int amountt=PlayerPrefs.GetInt(abc+"_amount")+1;
 							
@@ -44,8 +41,7 @@ public class savedeck : MonoBehaviour {
 						}
 			for (int i=b-1; i>=0; i--) {
 
-				//	PlayerPrefs.SetInt ("001_amount", 3);
-				//Debug.Log (aaa.transform.GetChild (i).GetComponent<UI2DSprite> ().sprite2D.name);
+			
 				string abc =bbb.transform.GetChild (i).GetComponent<UI2DSprite> ().sprite2D.name;
 				int amountt=PlayerPrefs.GetInt(abc+"_SubAmount")+1;
 				
