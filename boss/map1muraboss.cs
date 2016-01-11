@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class map1muraboss : MonoBehaviour {
@@ -32,11 +32,11 @@ public class map1muraboss : MonoBehaviour {
 
 	public Texture2D recsskill;
 	public Texture2D skillpic3;
-	// Use this for initialization
+
 	void Start () {
 		atk = 400;
 		HP = 20000;
-
+		newtempoeneny.isegu = true;
 		flag30 = true;
 		flag10 = true;
 		skillwalk= true;
@@ -52,8 +52,7 @@ public class map1muraboss : MonoBehaviour {
 		newtempoeneny.enemyspeed = 8000;
 		colorch = GameObject.Find ("trup").gameObject;
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
 
 		jktime += Time.deltaTime;
