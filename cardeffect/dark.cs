@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class dark : MonoBehaviour {
@@ -8,7 +8,6 @@ public class dark : MonoBehaviour {
 	bool startfly=true;
 	public Transform father;
 	public static bool isaru=false;
-	// Use this for initialization
 	void Start () {
 
 		isaru = false;
@@ -37,7 +36,6 @@ public class dark : MonoBehaviour {
 
 	}
 	
-	// Update is called once per frame
 	void Update () {
 		isaru = true;
 
