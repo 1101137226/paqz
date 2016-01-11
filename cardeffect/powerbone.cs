@@ -1,11 +1,10 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class powerbone : MonoBehaviour {
 	public float passtime;
 	bool jk;
 	bool inin;
-	// Use this for initialization
 	void Start () {
 		cardeffect.nowcard = 0;
 		bactrl.isspc = true;
@@ -13,7 +12,6 @@ public class powerbone : MonoBehaviour {
 		inin = true;
 	}
 	
-	// Update is called once per frame
 	void Update () {
 	
 		if (jk == false) {
