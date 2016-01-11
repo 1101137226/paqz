@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class dudue : MonoBehaviour {
@@ -13,7 +13,6 @@ public class dudue : MonoBehaviour {
 	float todokedelay;
 	short todokenow;
 	public static int duospeed;
-	// Use this for initialization
 	void Start () {
 		duospeed = 4500;
 		father = GameObject.Find ("me").transform;
@@ -23,7 +22,6 @@ public class dudue : MonoBehaviour {
 	
 	}
 	
-	// Update is called once per frame
 	void Update () {
 
 		gogo = false;
