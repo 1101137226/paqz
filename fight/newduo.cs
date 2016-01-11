@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class newduo : MonoBehaviour {
@@ -15,7 +15,6 @@ public class newduo : MonoBehaviour {
 	short startcombo;
 	short nowcombo;
 	short maxcombo;
-	// Use this for initialization
 	void Start () {
 
 		cardeffect.isduiru = true;
@@ -39,7 +38,6 @@ public class newduo : MonoBehaviour {
 		jk=GameObject.Find("UIRoot").GetComponent<bactrl>().jk;
 	}
 	
-	// Update is called once per frame
 	void Update () {
 
 		
