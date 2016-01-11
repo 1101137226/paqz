@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using UnityEngine.Networking;
 public class NETstaus : NetworkBehaviour {
@@ -23,18 +23,18 @@ public class NETstaus : NetworkBehaviour {
 	[SyncVar(hook="SyncDie")]public byte die=0;
 	[SyncVar(hook="SyncReady")]public bool ready=false;
 
-	// Use this for initialization
+
 	void Start () {
 
-		
-		PlayerPrefs.SetFloat("ATK",1200);
-		maxhp=PlayerPrefs.GetFloat("HP")*0.5f;
+
+
+		maxhp=PlayerPrefs.GetFloat("HP");
 
 		nowhp = maxhp;
 
-		nowatk=PlayerPrefs.GetFloat("ATK")*3f;
-		rec=PlayerPrefs.GetFloat("REC")*0.5f;
-		nowdeff=PlayerPrefs.GetFloat("DEF")*0.25f;
+		nowatk=PlayerPrefs.GetFloat("ATK")*1.2f;
+		rec=PlayerPrefs.GetFloat("REC")*1f;
+		nowdeff=PlayerPrefs.GetFloat("DEF")*1f;
 		team = this.GetComponent<NETBS> ().ourteam;
 		if (team == 1) {
 				
@@ -150,8 +150,7 @@ public class NETstaus : NetworkBehaviour {
 		
 		if (!jork) 
 		{
-				
-	//		nowdeff+=10;
+					
 			CmdDefUp();
 		}
 		if (jork) 
@@ -264,7 +263,7 @@ public class NETstaus : NetworkBehaviour {
 		reduceflag = 1;
 	
 	}
-	// Update is called once per frame
+
 	void Update () {
 
 		if (reduceflag==1)
