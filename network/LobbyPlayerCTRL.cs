@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using UnityEngine.Networking;
 
@@ -22,11 +22,6 @@ public class LobbyPlayerCTRL : NetworkLobbyPlayer
 	public override void OnClientEnterLobby ()
 	{
 		base.OnClientEnterLobby ();
-
-		//if we return from a game, color of text can still be the one for "Ready"
-
-		//setup the player data on UI. The value are SyncVar so the player
-		//will be created with the right value currently on server
 	}
 
 	void biger (bool b)
@@ -78,8 +73,6 @@ public class LobbyPlayerCTRL : NetworkLobbyPlayer
 		}
 
 		if (Application.loadedLevelName == "vsroom") {
-
-
 			if (isLocalPlayer) {
 				Cmdnnn (GameObject.Find ("Name").GetComponent<UIInput> ().value);
 				GameObject.Find ("Ready").GetComponent<NETReady> ().master = myname;
