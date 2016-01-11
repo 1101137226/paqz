@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using UnityEngine.Networking;
 
@@ -38,7 +38,6 @@ public class NETBS : NetworkBehaviour
 	public byte team;
 	public byte ourteam;
 	public bool isspc;
-	//\\\\\\\\\\\\\\\\\\\\\\\\\\
 	public float guup;
 	public float baup;
 	public float smup;
@@ -47,9 +46,7 @@ public class NETBS : NetworkBehaviour
 	float combodamageup;
 	public float powerup;
 	public float weakup;
-	///\\\\\\\\\\\\\\\\\\\\\\\
 	public bool isjk;
-	//\\\\\\\\\\\\\\\\\\\\\\\\
 	GameObject combodis;
 	GameObject carddeckdis;
 	public GameObject next;
@@ -167,7 +164,6 @@ public class NETBS : NetworkBehaviour
 							this.transform.parent.GetComponent<NETBS> ().isdes = true;
 																
 							if (this.name == "front") {
-								//damage.hitpois=0.7f;
 								this.transform.parent.GetComponent<NETBS> ().CmdCombo ();
 								this.transform.parent.GetComponent<NETBS> ().drawcombo++;
 
@@ -248,17 +244,12 @@ public class NETBS : NetworkBehaviour
 							combodamageup += 0.02f;
 						}
 					}
-				
-
-					//	bbb.GetComponent<NETnewtempo>().die=true;
 				} else if (jk) {
-					//	Instantiate(mm);
 					string a22 = bbb.GetComponent<UITexture> ().mainTexture.name;
 												
 					isdes = true;
 
 					if (this.name != "front" && this.name != "real") {
-						//damage.hitpois=1.0f;
 						CmdCombo ();
 						drawcombo++;
 						Damage (1f, a22, true);
@@ -268,12 +259,6 @@ public class NETBS : NetworkBehaviour
 							combodamageup += 0.02f;
 						}
 					}
-					//damage22(a22);
-				
-					//CmdCreatmm();
-					//Instantiate(mm);
-
-					//bbb.GetComponent<NETnewtempo>().die=true;
 				}
 			}
 		}
@@ -362,7 +347,7 @@ public class NETBS : NetworkBehaviour
 	
 	
 	}
-	// Update is called once per frame
+
 	void Update ()
 	{
 
@@ -447,49 +432,36 @@ public class NETBS : NetworkBehaviour
 
 			}
 
-
-
-			/////////////////
 			if (Input.GetKeyDown (KeyCode.Q) && ishand [0] == true) {
 			
 				string find0 = GameObject.Find ("UIRoot/0").GetComponent<UITexture> ().mainTexture.name;
 				if (isspc == false) {
 					drawcombo = 0;
-					//		cardeffect.nextcard = find0;
 					ishand [0] = false;
 					CmdCDis ("0S");
 					Usecard (find0);
 					GameObject.Find ("UIRoot/0").GetComponent<carddis> ().poi = true;
-
-					//Destroy(GameObject.Find("UIRoot/0").gameObject);
 				} else if (isspc == true && find0 != "70" && find0 != "71" && find0 != "72" && find0 != "72" && find0 != "76" && find0 != "77" && find0 != "78" && find0 != "79" && find0 != "80") {
 					drawcombo = 0;
-					//		cardeffect.nextcard = find0;
 					ishand [0] = false;
 					CmdCDis ("0S");
 					Usecard (find0);
 					GameObject.Find ("UIRoot/0").GetComponent<carddis> ().poi = true;
-					//Destroy(GameObject.Find("UIRoot/0").gameObject);
 				}
 			}
 			if (Input.GetKeyDown (KeyCode.W) && ishand [1] == true) {
 				string find0 = GameObject.Find ("UIRoot/1").GetComponent<UITexture> ().mainTexture.name;
 				if (isspc == false) {
 					drawcombo = 0;
-					//		cardeffect.nextcard = find0;
 					ishand [1] = false;
 					CmdCDis ("1S");
 					Usecard (find0);
 					GameObject.Find ("UIRoot/1").GetComponent<carddis> ().poi = true;
-
-					//Destroy(GameObject.Find("UIRoot/0").gameObject);
 				} else if (isspc == true && find0 != "70" && find0 != "71" && find0 != "72" && find0 != "72" && find0 != "76" && find0 != "77" && find0 != "78" && find0 != "79" && find0 != "80") {
 					drawcombo = 0;
-					//		cardeffect.nextcard = find0;
 					ishand [1] = false;
 					Usecard (find0);
 					GameObject.Find ("UIRoot/1").GetComponent<carddis> ().poi = true;
-					//Destroy(GameObject.Find("UIRoot/0").gameObject);
 					CmdCDis ("1S");
 				}
 			}
@@ -500,19 +472,15 @@ public class NETBS : NetworkBehaviour
 					drawcombo = 0;
 					ishand [2] = false;
 					CmdCDis ("2S");
-					//		cardeffect.nextcard = find0;
 					Usecard (find0);
 					GameObject.Find ("UIRoot/2").GetComponent<carddis> ().poi = true;
 
-					//Destroy(GameObject.Find("UIRoot/0").gameObject);
 				} else if (isspc == true && find0 != "70" && find0 != "71" && find0 != "72" && find0 != "72" && find0 != "76" && find0 != "77" && find0 != "78" && find0 != "79" && find0 != "80") {
 					drawcombo = 0;
-					//		cardeffect.nextcard = find0;
 					CmdCDis ("2S");
 					ishand [2] = false;
 					Usecard (find0);
 					GameObject.Find ("UIRoot/2").GetComponent<carddis> ().poi = true;
-					//Destroy(GameObject.Find("UIRoot/0").gameObject);
 				}
 			}
 			if (Input.GetKeyDown (KeyCode.R) && ishand [3] == true) {
@@ -520,21 +488,16 @@ public class NETBS : NetworkBehaviour
 				string find0 = GameObject.Find ("UIRoot/3").GetComponent<UITexture> ().mainTexture.name;
 				if (isspc == false) {
 					drawcombo = 0;
-					//		cardeffect.nextcard = find0;
 					ishand [3] = false;
 					CmdCDis ("3S");
 					Usecard (find0);
 					GameObject.Find ("UIRoot/3").GetComponent<carddis> ().poi = true;
-
-					//Destroy(GameObject.Find("UIRoot/0").gameObject);
 				} else if (isspc == true && find0 != "70" && find0 != "71" && find0 != "72" && find0 != "72" && find0 != "76" && find0 != "77" && find0 != "78" && find0 != "79" && find0 != "80") {
 					drawcombo = 0;
-					//		cardeffect.nextcard = find0;
 					ishand [3] = false;
 					CmdCDis ("3S");
 					Usecard (find0);
 					GameObject.Find ("UIRoot/3").GetComponent<carddis> ().poi = true;
-					//Destroy(GameObject.Find("UIRoot/0").gameObject);
 				}
 			}
 			if (Input.GetKeyDown (KeyCode.T) && ishand [4] == true) {
@@ -542,21 +505,16 @@ public class NETBS : NetworkBehaviour
 				string find0 = GameObject.Find ("UIRoot/4").GetComponent<UITexture> ().mainTexture.name;
 				if (isspc == false) {
 					drawcombo = 0;
-					//		cardeffect.nextcard = find0;
 					ishand [4] = false;
 					CmdCDis ("4S");
 					Usecard (find0);
 					GameObject.Find ("UIRoot/4").GetComponent<carddis> ().poi = true;
-
-					//Destroy(GameObject.Find("UIRoot/0").gameObject);
 				} else if (isspc == true && find0 != "70" && find0 != "71" && find0 != "72" && find0 != "72" && find0 != "76" && find0 != "77" && find0 != "78" && find0 != "79" && find0 != "80") {
 					drawcombo = 0;
-					//		cardeffect.nextcard = find0;
 					ishand [4] = false;
 					CmdCDis ("4S");
 					Usecard (find0);
 					GameObject.Find ("UIRoot/4").GetComponent<carddis> ().poi = true;
-					//Destroy(GameObject.Find("UIRoot/0").gameObject);
 				}
 			}
 			if (combo == 0) {
@@ -860,7 +818,7 @@ public class NETBS : NetworkBehaviour
 	{
 		GameObject to = (GameObject)Instantiate (mm);
 		to.transform.parent = this.transform;
-		to.transform.localPosition = new Vector3 (0, 0, 0);
+		to.transform.localPosition = new Vector3 (-0.3f, 0.35f, 0);
 		NetworkServer.Spawn (to);
 	}
 
@@ -869,7 +827,7 @@ public class NETBS : NetworkBehaviour
 	{
 		GameObject to = (GameObject)Instantiate (ff);
 		to.transform.parent = this.transform;
-		to.transform.localPosition = new Vector3 (0, 0, 0);
+		to.transform.localPosition = new Vector3 (-0.3f, 0.35f, 0);
 		NetworkServer.Spawn (to);
 	}
 
@@ -878,7 +836,7 @@ public class NETBS : NetworkBehaviour
 	{
 		GameObject to = (GameObject)Instantiate (rr);
 		to.transform.parent = this.transform;
-		to.transform.localPosition = new Vector3 (0, 0, 0);
+		to.transform.localPosition = new Vector3 (-0.3f, 0.35f, 0);
 		NetworkServer.Spawn (to);
 	}
 
@@ -1052,8 +1010,6 @@ public class NETBS : NetworkBehaviour
 				Instantiate (Resources.Load ("hand/" + handd.Peek ()));
 				GameObject.Find (handd.Peek () + "(Clone)").transform.parent = GameObject.Find ("UIRoot").transform;
 				GameObject.Find (handd.Peek () + "(Clone)").transform.localScale = new Vector3 (1, 1, 1);
-
-				//Here Have To Change
 				GameObject.Find (handd.Peek () + "(Clone)").transform.localPosition = new Vector3 (-6600 + q * 1800, -4500 + (team - 1) * 10000, 0);
 
 				if (team == 1) {
@@ -1080,8 +1036,6 @@ public class NETBS : NetworkBehaviour
 				Instantiate (Resources.Load ("hand/" + handd.Peek ()));
 				GameObject.Find (handd.Peek () + "(Clone)").transform.parent = GameObject.Find ("UIRoot").transform;
 				GameObject.Find (handd.Peek () + "(Clone)").transform.localScale = new Vector3 (1, 1, 1);
-
-				//Here Have To Change
 				GameObject.Find (handd.Peek () + "(Clone)").transform.localPosition = new Vector3 (-6600 + q * 1800, -4500 + (team - 1) * 10000, 0);
 
 				if (team == 1) {
@@ -1190,11 +1144,7 @@ public class NETBS : NetworkBehaviour
 				CmdDeckDraw ();
 				GameObject.Find (handd.Peek () + "(Clone)").transform.parent = GameObject.Find ("UIRoot").transform;
 				GameObject.Find (handd.Peek () + "(Clone)").transform.localScale = new Vector3 (1, 1, 1);
-
-				//First 5 Card, X Pos Is Same To Single,
-				//Y Pos: t - 1 = 0 -> Host Player, t - 1 = 1 -> Client Player,
-				//Use This To Let Client's Card At High Place
-				GameObject.Find (handd.Peek () + "(Clone)").transform.localPosition = new Vector3 (-6600 + q * 1800, -3300 + (t - 1) * 6000, 0);
+				GameObject.Find (handd.Peek () + "(Clone)").transform.localPosition = new Vector3 (-6600 + q * 1800, -3300 + (t - 1) * 6600, 0);
 
 				string qw = q.ToString ();
 				GameObject.Find (handd.Dequeue () + "(Clone)").name = qw;
@@ -1203,9 +1153,7 @@ public class NETBS : NetworkBehaviour
 				Instantiate (ba);
 				GameObject.Find ("cardback(Clone)").transform.parent = GameObject.Find ("UIRoot").transform;
 				GameObject.Find ("cardback(Clone)").transform.localScale = new Vector3 (1, 1, 1);
-
-				//Card Back
-				GameObject.Find ("cardback(Clone)").transform.localPosition = new Vector3 (-6600 + q * 1800, -3300 + (t - 1) * 6000, 0);
+				GameObject.Find ("cardback(Clone)").transform.localPosition = new Vector3 (-6600 + q * 1800, -3300 + (t - 1) * 6600, 0);
 
 				string qw = q.ToString () + "S";
 				GameObject.Find ("cardback(Clone)").name = qw;
