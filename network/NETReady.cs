@@ -1,21 +1,18 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using UnityEngine.Networking;
 public class NETReady : MonoBehaviour {
 	public bool ready;
 	public string master;
 	UILabel o;
-	// Use this for initialization
+
 	void Start () {
 		ready = false;
 		o = this.transform.GetChild (0).GetComponent<UILabel> ();
 	}
 	public void OnPress(bool ispress){
 		
-		GameObject m = GameObject.Find (master).gameObject;
-		//	manager.networkAddress = GameObject.Find ("IPadd").GetComponent<UIInput> ().value;
-		
-		//	manager.StartClient();
+		GameObject m = GameObject.Find (master).gameObject;	
 		
 		if (ispress) {
 			if(!ready)
@@ -34,7 +31,7 @@ public class NETReady : MonoBehaviour {
 			}
 		}
 	}
-	// Update is called once per frame
+
 	void Update () {
 	
 	}
